@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: app
-        # İmajı GitHub Container Registry'den (GHCR) çekeceğiz
-        image: ghcr.io/ereninan/devops-case-app:latest
+        image: devops-case-app:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 3000
 ---
@@ -30,5 +30,4 @@ spec:
   ports:
     - port: 80
       targetPort: 3000
-      # Dışarıdan erişmek için kullanacağımız port (30000-32767 arası olmalı)
       nodePort: 30080
